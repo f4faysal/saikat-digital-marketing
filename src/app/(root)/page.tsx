@@ -1,6 +1,9 @@
 import AboutSection from '@/components/about-section';
+import ContactSection from '@/components/ContactForm';
+
 import Footer from '@/components/footer';
 import PortfolioSection from '@/components/portfolio';
+import Testimonial from '@/components/testimonial';
 import { Button } from '@/components/ui/button';
 import WhatIDoSection from '@/components/whatIDoSection';
 import { Badge } from 'lucide-react';
@@ -57,8 +60,9 @@ const HomePage = () => {
       {/* Portfolio Section */}
       <PortfolioSection />
       {/* Testimonials Section */}
-      {/* ! Services Overview */}
+      <Testimonial />
       {/* Contact Section */}
+      <ContactSection />
       {/* Footer */}
       <Footer />
     </main>

@@ -26,9 +26,7 @@ const services = [
     src: 'rock.jpg',
     url: 'https://images.unsplash.com/photo-1605106702842-01a887a31122?q=80&w=500&auto=format&fit=crop',
     color: '#5196fd',
-    icon: <Megaphone className='h-6 w-6' />,
-    range: [0, 0.2] as [number, number],
-    targetScale: 0.85
+    icon: <Megaphone className='h-6 w-6' />
   },
   {
     id: 2,
@@ -40,9 +38,7 @@ const services = [
     src: 'tree.jpg',
     url: 'https://images.unsplash.com/photo-1605106250963-ffda6d2a4b32?w=500&auto=format&fit=crop&q=60',
     color: '#8f89ff',
-    icon: <Target className='h-6 w-6' />,
-    range: [0.2, 0.4] as [number, number],
-    targetScale: 0.85
+    icon: <Target className='h-6 w-6' />
   },
   {
     id: 3,
@@ -54,9 +50,7 @@ const services = [
     src: 'water.jpg',
     url: 'https://images.unsplash.com/photo-1605106901227-991bd663255c?w=500&auto=format&fit=crop',
     color: '#13006c',
-    icon: <Search className='h-6 w-6' />,
-    range: [0.4, 0.6] as [number, number],
-    targetScale: 0.85
+    icon: <Search className='h-6 w-6' />
   },
   {
     id: 4,
@@ -68,9 +62,7 @@ const services = [
     src: 'house.jpg',
     url: 'https://images.unsplash.com/photo-1605106715994-18d3fecffb98?w=500&auto=format&fit=crop&q=60',
     color: '#ed649e',
-    icon: <TrendingUp className='h-6 w-6' />,
-    range: [0.6, 0.8] as [number, number],
-    targetScale: 0.85
+    icon: <TrendingUp className='h-6 w-6' />
   },
   {
     id: 5,
@@ -81,9 +73,7 @@ const services = [
     src: 'cactus.jpg',
     url: 'https://images.unsplash.com/photo-1506792006437-256b665541e2?w=500&auto=format&fit=crop',
     color: '#fd521a',
-    icon: <Smartphone className='h-6 w-6' />,
-    range: [0.8, 1.0] as [number, number],
-    targetScale: 0.85
+    icon: <Smartphone className='h-6 w-6' />
   },
   {
     id: 6,
@@ -95,9 +85,7 @@ const services = [
     src: 'house.jpg',
     url: 'https://images.unsplash.com/photo-1605106715994-18d3fecffb98?w=500&auto=format&fit=crop&q=60',
     color: '#ed649e',
-    icon: <Share2 className='h-6 w-6' />,
-    range: [1.0, 1.2] as [number, number],
-    targetScale: 0.85
+    icon: <Share2 className='h-6 w-6' />
   }
 ];
 
@@ -170,12 +158,7 @@ export default function WhatIDoSection(): JSX.Element {
     offset: ['start start', 'end end']
   });
   return (
-    <div className='relative overflow-hidden bg-gradient-to-b from-white to-gray-50 px-4 py-24 dark:from-gray-900 dark:to-gray-800'>
-      {/* Background decorative elements */}
-      <div className='absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-purple-500 via-purple-600 to-blue-500'></div>
-      <div className='absolute -right-24 -top-24 h-48 w-48 rounded-full bg-purple-100 opacity-70 blur-3xl dark:bg-purple-900/20'></div>
-      <div className='absolute -bottom-24 -left-24 h-48 w-48 rounded-full bg-blue-100 opacity-70 blur-3xl dark:bg-blue-900/20'></div>
-
+    <div className='bg-[#f9fbfa]'>
       <main className='container mx-auto' ref={container}>
         <>
           <section className='grid h-[70vh] w-full place-content-center text-black'>
@@ -264,15 +247,15 @@ export const Card: React.FC<CardProps> = ({
   return (
     <div
       ref={container}
-      className='sticky top-0 flex h-screen items-center justify-center px-4 sm:px-6'
+      className='sticky top-0 flex h-screen items-center justify-center'
     >
       <motion.div
         style={{
           backgroundColor: color,
           scale,
-          top: `calc(-5vh + ${i * 25}px)`
+          top: `calc(-5vh + ${i * 26}px)`
         }}
-        className='relative -top-[25%] flex h-auto w-full max-w-5xl origin-top flex-col rounded-lg p-5 sm:p-8 md:h-[450px] md:w-[85%] lg:w-[70%] lg:p-10'
+        className={`relative -top-[25%] flex h-[450px] w-[70%] origin-top flex-col rounded-md p-10`}
       >
         <div className='flex h-full flex-col md:flex-row md:gap-10'>
           {/* Content Section */}
