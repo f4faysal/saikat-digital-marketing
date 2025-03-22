@@ -16,7 +16,7 @@ const HomePage = () => {
         <div className='text-4xl font-bold'>Saikat 👋</div>
       </div>
       {/* ! Hero Section */}
-      <section className='container px-4 sm:px-6 lg:px-8'>
+      <section className='container mx-auto'>
         <div className='flex min-h-[90%] w-full flex-col items-center justify-center gap-10 px-6 py-16'>
           <div className='max-w-2xl text-center'>
             <Badge className='rounded-full border-none bg-gradient-to-br from-primary via-muted/30 via-70% to-primary py-1'>
