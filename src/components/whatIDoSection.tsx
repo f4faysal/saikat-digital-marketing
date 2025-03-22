@@ -212,17 +212,24 @@ export const Card: React.FC<CardProps> = ({
         }}
         className={`relative -top-[25%] flex h-[450px] w-[70%] origin-top flex-col rounded-md p-10`}
       >
-        <h2 className='text-center text-2xl font-semibold'>{title}</h2>
         <div className={`mt-5 flex h-full gap-10`}>
           <div className={`relative top-[10%] w-[40%]`}>
-            <p className='text-sm'>{description}</p>
+            <h2 className='mb-4 text-center text-2xl font-bold text-white md:text-left md:text-3xl'>
+              {title}
+            </h2>
+            <h5 className='mb-4 text-center text-sm italic text-gray-300 md:text-left'>
+              {tagline}
+            </h5>
+            <p className='mb-6 text-center text-sm text-gray-200 md:text-left'>
+              {description}
+            </p>
             <span className='flex items-center gap-2 pt-2'>
               <a
                 href={'#'}
                 target='_blank'
                 className='cursor-pointer underline'
               >
-                See more
+                Get Started
               </a>
               <svg
                 width='22'
@@ -252,3 +259,85 @@ export const Card: React.FC<CardProps> = ({
     </div>
   );
 };
+
+// export const Card: React.FC<CardProps> = ({
+//   i,
+//   title,
+//   description,
+//   src,
+//   url,
+//   color,
+//   progress,
+//   range,
+//   targetScale,
+//   tagline
+// }) => {
+//   const container = useRef(null);
+//   const { scrollYProgress } = useScroll({
+//     target: container,
+//     offset: ['start end', 'start start']
+//   });
+
+//   // Apply a slight zoom effect on the image as you scroll
+//   const imageScale = useTransform(scrollYProgress, [0, 1], [1.1, 1]);
+//   // Scale the whole card based on external progress
+//   const scale = useTransform(progress, range, [1, targetScale]);
+
+//   return (
+//     <div
+//       ref={container}
+//       className='sticky top-0 flex h-screen items-center justify-center'
+//     >
+//       <motion.div
+//         style={{
+//           backgroundColor: color,
+//           scale,
+//           top: `calc(-5vh + ${i * 25}px)`
+//         }}
+//         className='relative -top-[25%] flex h-[450px] w-[90%] max-w-5xl flex-col overflow-hidden rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 md:flex-row'
+//       >
+//         {/* Text Section */}
+//         <div className='flex flex-col justify-center bg-gradient-to-br from-black/70 to-transparent p-8 md:w-1/2'>
+//           <h2 className='mb-4 text-center text-2xl font-bold text-white md:text-left md:text-3xl'>
+//             {title}
+//           </h2>
+//           <p className='mb-4 text-center text-sm italic text-gray-300 md:text-left'>
+//             {tagline}
+//           </p>
+//           <p className='mb-6 text-center text-sm text-gray-200 md:text-left'>
+//             {description}
+//           </p>
+//           <div className='mt-2 text-center md:text-left'>
+//             <Link
+//               href={url || '#'}
+//               className='inline-flex items-center text-white hover:underline'
+//             >
+//               Get Started <ArrowRight className='ml-2' />
+//             </Link>
+//           </div>
+//         </div>
+
+//         {/* Image Section */}
+//         <div className='relative md:w-1/2'>
+//           <motion.div
+//             className='relative h-full w-full'
+//             style={{ scale: imageScale }}
+//           >
+//             <Image
+//               src={url || '/placeholder.svg'}
+//               alt={title}
+//               fill
+//               className='object-cover'
+//             />
+//             <div
+//               className='absolute inset-0'
+//               style={{
+//                 background: `linear-gradient(to right, ${color}, transparent)`
+//               }}
+//             />
+//           </motion.div>
+//         </div>
+//       </motion.div>
+//     </div>
+//   );
+// };

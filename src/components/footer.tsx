@@ -4,8 +4,8 @@ import AnimatedText from '@/components/core/cursor-follow-text';
 function Footer() {
   return (
     <>
-      <footer className='footer-bg radial-gradient-bg relative mx-auto mb-8 h-fit w-[95%] overflow-hidden rounded-lg border [--gradient-center:#f3f4f6] [--gradient-edge:#f3f4f6] dark:[--gradient-center:#02081765] dark:[--gradient-edge:#020817] lg:pb-20 2xl:h-[550px]'>
-        <div className='justify-between gap-10 rounded-sm rounded-b-none bg-blue-500 p-5 py-5 text-white dark:bg-[#4c61ff] sm:flex 2xl:py-10'>
+      <footer className='footer-bg radial-gradient-bg relative mx-auto mb-8 h-fit w-[95%] overflow-hidden rounded-lg [--gradient-center:#f3f4f6] [--gradient-edge:#f3f4f6] dark:[--gradient-center:#02081765] dark:[--gradient-edge:#020817] 2xl:h-[550px]'>
+        <div className='justify-between gap-10 rounded-sm rounded-b-none bg-purple-600 p-5 py-5 text-white dark:bg-[#4c61ff] sm:flex 2xl:py-10'>
           <div className='flex w-fit flex-col justify-center'>
             <div className='relative ml-3 h-20 w-20 rounded-sm bg-white before:absolute before:-left-3 before:-top-3 before:h-full before:w-full before:rounded-md before:bg-white/50 2xl:h-24 2xl:w-24'></div>
             <article className='w-64 space-y-1 py-2 2xl:w-80'>
