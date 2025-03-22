@@ -7,6 +7,7 @@ import Testimonial from '@/components/testimonial';
 import { Button } from '@/components/ui/button';
 import WhatIDoSection from '@/components/whatIDoSection';
 import { Badge } from 'lucide-react';
+import Link from 'next/link';
 
 const HomePage = () => {
   return (
@@ -38,17 +39,22 @@ const HomePage = () => {
                 <a href='#contact'>Let’s Chat and Make Magic Happen</a>
                 <ArrowUpRight className='ml-2 !h-5 !w-5' />
               </Button> */}
-              <Button
-                size='lg'
-                className='bg-purple-600 px-8 py-6 text-lg hover:bg-purple-700'
-                // onClick={() =>
-                //   document
-                //     .getElementById('contact')
-                //     ?.scrollIntoView({ behavior: 'smooth' })
-                // }
-              >
-                Let&apos;s Chat and Make Magic Happen
-              </Button>
+              <Link href='/contact'>
+                <Button
+                  size='lg'
+                  className='bg-purple-600 px-8 py-6 text-lg hover:bg-purple-700'
+                  // onClick={() =>
+                  //   document
+                  //     .getElementById('contact')
+                  //     ?.scrollIntoView({ behavior: 'smooth' })
+                  // }
+                >
+                  <span className='hidden md:inline-block'>
+                    Let&apos;s Chat and Make Magic Happen
+                  </span>
+                  <span className='md:hidden'>Let&apos;s Chat</span>
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
