@@ -255,25 +255,25 @@ export const Card: React.FC<CardProps> = ({
           scale,
           top: `calc(-5vh + ${i * 26}px)`
         }}
-        className={`relative -top-[25%] flex h-[450px] w-[70%] origin-top flex-col rounded-md p-10`}
+        className={`relative -top-[25%] flex h-[450px] w-[100%] origin-top flex-col rounded-md p-10 md:w-[70%]`}
       >
         <div className='flex h-full flex-col md:flex-row md:gap-10'>
           {/* Content Section */}
           <div className='mb-6 w-full md:mb-0 md:w-[50%] md:pt-4'>
-            <div className='flex size-20 items-center justify-center rounded-full bg-white/20 text-white'>
+            <div className='flex size-10 items-center justify-center rounded-full bg-white/20 text-white md:size-20'>
               {icon}
             </div>
-            <h2 className='text-center text-xl font-bold text-white sm:text-2xl md:text-left md:text-4xl'>
+            <h2 className='text-xl font-bold text-white sm:text-2xl md:text-left md:text-4xl'>
               {title}
             </h2>
 
-            <h5 className='mb-3 text-center text-sm italic text-gray-300 md:text-left'>
+            <h5 className='mb-3 text-sm italic text-gray-300 md:text-left'>
               {tagline}
             </h5>
-            <p className='mb-4 text-center text-sm text-gray-200 md:text-left'>
+            <p className='mb-4 text-sm text-gray-200 md:text-left'>
               {description}
             </p>
-            <div className='flex justify-center md:justify-start'>
+            <div className='flex md:justify-start'>
               <a
                 href='#'
                 target='_blank'
