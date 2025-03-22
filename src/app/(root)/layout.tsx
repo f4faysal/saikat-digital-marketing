@@ -1,3 +1,4 @@
+import { PageProvider } from '@/context/pageContext';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -10,5 +11,5 @@ export default async function FontEndLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return <PageProvider>{children}</PageProvider>;
 }
