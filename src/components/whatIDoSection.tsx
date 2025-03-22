@@ -2,6 +2,7 @@
 'use client';
 
 import { motion, MotionValue, useScroll, useTransform } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 import Image from 'next/image';
 import { JSX, useRef } from 'react';
 const projects = [
@@ -46,6 +47,69 @@ const projects = [
     color: '#fd521a'
   }
 ];
+
+const services = [
+  {
+    title: 'Digital Marketing Consultancy',
+    tagline:
+      'I give advice that actually makes sense—and yes, it’s free (I’m nice like that).',
+    description:
+      'I’ll take a look at your business, analyze what’s working and what’s not, and offer clear, actionable advice that will boost your digital presence. Simple, no jargon, and easy to follow.',
+    src: 'rock.jpg',
+    link: 'https://images.unsplash.com/photo-1605106702842-01a887a31122?q=80&w=500&auto=format&fit=crop',
+    color: '#5196fd'
+  },
+  {
+    title: 'Media Buying',
+    tagline:
+      'I place ads that reach the right people without wasting your budget.',
+    description:
+      'I make sure your ads are seen by the right eyes at the right time—no fluff, no waste. Just targeted media buying that gets you results. Your money is too precious to waste!',
+    src: 'tree.jpg',
+    link: 'https://images.unsplash.com/photo-1605106250963-ffda6d2a4b32?w=500&auto=format&fit=crop&q=60',
+    color: '#8f89ff'
+  },
+  {
+    title: 'SEO',
+    tagline:
+      'Making Google love your site so you get more traffic, more leads, and more sales.',
+    description:
+      'SEO isn’t a mystery; it’s a strategy. I’ll help your site rank higher, get noticed by search engines, and attract those perfect leads. The best part? It lasts long-term.',
+    src: 'water.jpg',
+    link: 'https://images.unsplash.com/photo-1605106901227-991bd663255c?w=500&auto=format&fit=crop',
+    color: '#13006c'
+  },
+  {
+    title: 'CRO (Conversion Rate Optimization)',
+    tagline:
+      'I help turn your visitors into loyal customers (and maybe even superfans).',
+    description:
+      'A pretty website isn’t enough. I’ll ensure your site is optimized to convert visitors into leads—and leads into paying customers. Let’s make your website a sales machine.',
+    src: 'house.jpg',
+    link: 'https://images.unsplash.com/photo-1605106715994-18d3fecffb98?w=500&auto=format&fit=crop&q=60',
+    color: '#ed649e'
+  },
+  {
+    title: 'ASO (App Store Optimization)',
+    tagline: 'Making sure your app isn’t the best-kept secret in the store.',
+    description:
+      'With ASO, I help your app get found, downloaded, and loved by users. More installs, more visibility, more success. If your app isn’t getting the attention it deserves, I can fix that.',
+    src: 'cactus.jpg',
+    link: 'https://images.unsplash.com/photo-1506792006437-256b665541e2?w=500&auto=format&fit=crop',
+    color: '#fd521a'
+  },
+  {
+    title: 'Social Media Marketing',
+    tagline:
+      'I’ll create content so good your audience won’t be able to stop sharing it.',
+    description:
+      'Social media isn’t just about posting pretty pictures. It’s about creating engaging content that builds your community and turns followers into loyal fans. I’ll help your brand become the talk of the town.',
+    src: 'house.jpg',
+    link: 'https://images.unsplash.com/photo-1605106715994-18d3fecffb98?w=500&auto=format&fit=crop&q=60',
+    color: '#ed649e'
+  }
+];
+
 export default function WhatIDoSection(): JSX.Element {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -53,30 +117,44 @@ export default function WhatIDoSection(): JSX.Element {
     offset: ['start start', 'end end']
   });
   return (
-    <div>
-      <main className='bg-black' ref={container}>
+    <div className='bg-slate-950'>
+      <main className='container mx-auto' ref={container}>
         <>
           <section className='grid h-[70vh] w-full place-content-center bg-slate-950 text-white'>
             <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
 
-            <h1 className='px-8 text-center text-5xl font-semibold leading-[120%] tracking-tight 2xl:text-7xl'>
-              Stacking Cards Using <br /> Framer-Motion. Scroll down! 👇
+            <h1 className='text-center text-4xl font-semibold leading-[120%] tracking-tight md:text-5xl 2xl:text-7xl'>
+              Let's Take Your Business on a Ride Through Digital Marketing! 👇
             </h1>
+            <p className='mt-6 text-center text-base font-semibold leading-[120%] tracking-tight text-slate-300 md:text-lg 2xl:text-xl'>
+              As you scroll down, the train rolls in, each bogey (car) revealing
+              a different service I offer. Hop on and enjoy the ride!
+            </p>
+
+            <motion.div
+              className='mt-12 flex justify-center'
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+            >
+              <ChevronDown className='h-10 w-10 animate-bounce text-slate-300' />
+            </motion.div>
           </section>
         </>
 
-        <section className='w-full bg-slate-950 text-white'>
-          {projects.map((project, i) => {
+        <section className='w-full text-white'>
+          {services.map((service, i) => {
             const targetScale = 1 - (projects.length - i) * 0.05;
             return (
               <Card
                 key={`p_${i}`}
                 i={i}
-                url={project?.link}
-                src={project?.src}
-                title={project?.title}
-                color={project?.color}
-                description={project?.description}
+                url={service?.link}
+                src={service?.src}
+                title={service?.title}
+                color={service?.color}
+                description={service?.description}
+                tagline={service?.tagline}
                 progress={scrollYProgress}
                 range={[i * 0.25, 1]}
                 targetScale={targetScale}
@@ -84,13 +162,6 @@ export default function WhatIDoSection(): JSX.Element {
             );
           })}
         </section>
-
-        <footer className='group bg-slate-950'>
-          <h1 className='translate-y-20 bg-gradient-to-r from-gray-400 to-gray-800 bg-clip-text text-center text-[16vw] font-semibold uppercase leading-[100%] text-transparent transition-all ease-linear'>
-            ui-layout
-          </h1>
-          <div className='relative z-10 grid h-40 place-content-center rounded-tl-full rounded-tr-full bg-black text-2xl'></div>
-        </footer>
       </main>
     </div>
   );
@@ -105,6 +176,7 @@ interface CardProps {
   progress: MotionValue<number>;
   range: [number, number];
   targetScale: number;
+  tagline: string;
 }
 export const Card: React.FC<CardProps> = ({
   i,
@@ -115,7 +187,8 @@ export const Card: React.FC<CardProps> = ({
   color,
   progress,
   range,
-  targetScale
+  targetScale,
+  tagline
 }) => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({

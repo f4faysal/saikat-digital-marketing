@@ -196,3 +196,7 @@
     -webkit-text-fill-color: transparent;
   }
 }
+
+body.hide_header .header {
+  transform: translateY(-100%);
+}
