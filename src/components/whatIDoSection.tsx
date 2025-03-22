@@ -2,7 +2,6 @@
 'use client';
 
 import { motion, MotionValue, useScroll, useTransform } from 'framer-motion';
-import { ReactLenis, useLenis } from '@studio-freight/react-lenis';
 import Image from 'next/image';
 import { JSX, useRef } from 'react';
 const projects = [
@@ -93,7 +92,7 @@ export default function WhatIDoSection(): JSX.Element {
           <div className='relative z-10 grid h-40 place-content-center rounded-tl-full rounded-tr-full bg-black text-2xl'></div>
         </footer>
       </main>
-    </ReactLenis>
+    </div>
   );
 }
 interface CardProps {
